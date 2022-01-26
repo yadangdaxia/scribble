@@ -17,6 +17,8 @@ class EntriesController < ApplicationController
   end
 
   def show
+    # Use @entry so that we can display it in our view
+    @entry = Entry.find(params[:id])
   end
 
   def new
