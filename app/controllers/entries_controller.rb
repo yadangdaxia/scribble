@@ -1,4 +1,6 @@
 class EntriesController < ApplicationController
+  # This line calls the find_entry method and executes it at the beginning of these four methods:
+  before_action :find_entry, only: [:show, :edit, :update, :destroy]
   def home
 
     @time = Date.today.strftime("%A, %B %e, %Y %l:%M %p")
@@ -17,8 +19,6 @@ class EntriesController < ApplicationController
   end
 
   def show
-    # Use @entry so that we can display it in our view
-    @entry = Entry.find(params[:id])
   end
 
   def new
@@ -34,21 +34,33 @@ class EntriesController < ApplicationController
   end
 
   def edit
-    @entry = Entry.find(params[:id])
   end
 
   def update
+    @entry.update(entry_params)
+    # Redirects to entry that was updated
+    redirect_to entry_path(@entry)
   end
 
   def destroy
+    @entry = Entry.find(params[:id])
+    @entry.destroy
+    # Redirects to entries page
+    redirect_to entries_path
   end
 
   private
 
   # This method called above in create method
   def entry_params
-    # takes only the :entry key in params, disregards others
+    # Takes only the :entry key in params, disregards others
     params.require(:entry).permit(:date, :body, :datapoint)
+  end
+
+  # Made this method to avoid repeating code (see before_action)
+  def find_entry
+    # Use @entry so that we can display it in our view
+    @entry = Entry.find(params[:id])
   end
 
 end

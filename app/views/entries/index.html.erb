@@ -1,6 +1,15 @@
 <h1> Index page </h1>
+
+<h2> Here are all the entries</h2>
+
   <ul>
     <% @entries.each do |entry| %>
-    <li><button class="button"><%= entry.date %></div></li>
+    <li>
+      <div class="button">
+        <p>DATE: <%= entry.date %></p>
+        <p>DATAPOINT: <%= entry.datapoint %></p>
+        <%= link_to "View Entry", entry_path(entry.id) %>
+      </div>
+    </li>
     <% end %>
   </ul>

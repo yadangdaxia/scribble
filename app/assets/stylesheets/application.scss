@@ -28,6 +28,10 @@
    color: green;
  }
 
+ul {
+  list-style: none;
+}
+
 .button {
   border-radius: 8px;
   background-color: #678983;
@@ -36,6 +40,7 @@
   font-weight: bold;
   text-decoration: none;
   color: white;
+  width: 500px;
 }
 
 .button:hover {
