@@ -1,5 +1,31 @@
+<%# <%= render "layouts/form" %>
 
-<form action="/contact" method="get">
-  <input type="text" name="member" placeholder="Who are you looking for?">
-  <input type="submit">
-</form>
+<%= form_for @entry do |form| %>
+
+  <%# hidden field exists by default %>
+
+  <%= form.label :date %>
+  <%= form.date_field :date %>
+
+  <%= form.label :body %>
+  <%= form.text_field :body %>
+
+  <%= form.label :datapoint %>
+  <%= form.number_field :datapoint %>
+
+  <%= form.submit%>
+
+<% end %>
+
+
+<%#
+<form action="/entries" method="post">
+  <!--- Can add autheticity token (CSRF token) if desired --->
+
+  <label for="date"></label>
+  <input type="timedate" name="entry[date]" placeholder="Date">
+
+  <label for="body"></label>
+  <input type="text" name="entry[body]" placeholder="Your entry here">
+
+</form> %>

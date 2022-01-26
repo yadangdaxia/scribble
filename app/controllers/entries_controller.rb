@@ -22,13 +22,19 @@ class EntriesController < ApplicationController
   end
 
   def new
-    # entry = params[:?]
+    # Only create empty instance (Everything will be nil)
+    @entry = Entry.new
   end
 
   def create
+    @entry = Entry.new(entry_params)
+    @entry.save
+    # Redirect to specific page
+    redirect_to entry_path(@entry)
   end
 
   def edit
+    @entry = Entry.find(params[:id])
   end
 
   def update
@@ -38,5 +44,11 @@ class EntriesController < ApplicationController
   end
 
   private
+
+  # This method called above in create method
+  def entry_params
+    # takes only the :entry key in params, disregards others
+    params.require(:entry).permit(:date, :body, :datapoint)
+  end
 
 end
