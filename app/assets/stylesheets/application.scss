@@ -13,3 +13,40 @@
  *= require_tree .
  *= require_self
  */
+
+ /*  Note: I renamed this file extension from .css to .scss  */
+
+ .navbar {
+  text-decoration: none;
+  // box-sizing: border-box;
+  padding: 12px;
+  // position: fixed;
+  width: 100%;
+ }
+
+ .nav-item {
+   color: green;
+ }
+
+.button {
+  border-radius: 8px;
+  background-color: #678983;
+  padding: 8px;
+  margin: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+.button:hover {
+  color: white;
+}
+
+
+// This is how to define scss elements
+
+// $background-color: #1A5F7A;
+
+// body {
+//   background-color: $background-color;
+// }

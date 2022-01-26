@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'faker'
+
+10.times do
+  Entry.create(
+    date: Faker::Date.between(from: 1.year.ago, to: Date.today),
+    body: Faker::Movies::Hobbit.quote
+  )
+end
+
+puts "Created #{Entry.count} entries."
