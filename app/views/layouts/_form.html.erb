@@ -1,0 +1,23 @@
+<%= form_for @entry do |form| %>
+
+  <%# hidden field exists by default %>
+
+  <%= form.label :date %>
+  <%= form.date_field :date %>
+
+  <%= form.label :body %>
+  <%= form.text_field :body %>
+
+  <%= form.label :datapoint %>
+  <%= form.number_field :datapoint %>
+
+  <%= form.submit%>
+
+<% end %>
+
+
+
+<%# <form action="/" method="get">
+  <input type="text" name="member" placeholder="Who are you looking for?">
+  <input type="submit">
+</form> %>
