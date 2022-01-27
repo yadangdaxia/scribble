@@ -19,24 +19,9 @@
 
  /* Importing */
 
- @import "bootstrap/scss/bootstrap";
+@import "bootstrap/scss/bootstrap";
+@import 'components/navbar';
 
-
-
- .navbar {
-  text-decoration: none;
-  // box-sizing: border-box;
-  padding: 12px;
-  // position: fixed;
-  background: #FFC900;
-  width: 100%
-
-}
-
- .nav-item {
-   color: green;
-   font-size: 40px;
- }
 
 ul {
   list-style: none;
