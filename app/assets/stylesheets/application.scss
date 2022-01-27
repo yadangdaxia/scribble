@@ -14,44 +14,39 @@
  *= require_self
  */
 
+
  /*  Note: I renamed this file extension from .css to .scss  */
 
- .navbar {
-  text-decoration: none;
-  // box-sizing: border-box;
-  padding: 12px;
-  // position: fixed;
-  width: 100%;
- }
+ /* Importing */
 
- .nav-item {
-   color: green;
- }
+@import "bootstrap/scss/bootstrap";
+@import 'components/navbar';
+@import 'components/cards';
+
+
+
+
+
+
+// This is how to define scss elements
+
+$background-color: #1A5F7A;
+$header-color: #FFC900;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $background-color;
+  color: #FFFFFF;
+  font-family: 'Calibri', sans-serif;
+}
 
 ul {
   list-style: none;
 }
 
-.button {
-  border-radius: 8px;
-  background-color: #678983;
-  padding: 8px;
-  margin: 8px;
-  font-weight: bold;
-  text-decoration: none;
-  color: white;
-  width: 500px;
+.top-spacer {
+  height: 80px;
 }
-
-.button:hover {
-  color: white;
-}
-
-
-// This is how to define scss elements
-
-// $background-color: #1A5F7A;
-
-// body {
-//   background-color: $background-color;
-// }

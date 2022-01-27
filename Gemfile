@@ -32,6 +32,11 @@ gem 'faker'
 # Simple form
 gem 'simple_form'
 
+# Parse CSS and add vendor prefixes to CSS rules using values from the Can I Use website. (https://caniuse.com/)
+gem 'autoprefixer-rails', '10.2.5'
+
+# Font Awesome
+gem 'font-awesome-sass', '~> 5.6.1'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
