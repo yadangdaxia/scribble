@@ -8,10 +8,16 @@
 
 require 'faker'
 
+puts "Destroying all entries"
+Entry.destroy_all
+
+puts "Creating new entries"
+
 10.times do
   Entry.create(
     date: Faker::Date.between(from: 1.year.ago, to: Date.today),
-    body: Faker::Movies::Hobbit.quote
+    body: Faker::Movies::Hobbit.quote,
+    datapoint: rand(0...10.0).round(1)
   )
 end
 
