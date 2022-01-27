@@ -21,33 +21,32 @@
 
 @import "bootstrap/scss/bootstrap";
 @import 'components/navbar';
+@import 'components/cards';
 
 
-ul {
-  list-style: none;
-}
 
-.button {
-  border-radius: 8px;
-  background-color: #678983;
-  padding: 8px;
-  margin: 8px;
-  font-weight: bold;
-  text-decoration: none;
-  color: white;
-  width: 500px;
-}
 
-.button:hover {
-  color: white;
-}
 
 
 // This is how to define scss elements
 
 $background-color: #1A5F7A;
-$header-color: #1A5F7A;
+$header-color: #FFC900;
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   background-color: $background-color;
+  color: #FFFFFF;
+  font-family: 'Calibri', sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+.top-spacer {
+  height: 80px;
 }

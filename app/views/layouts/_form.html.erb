@@ -1,16 +1,13 @@
-<%= simple_form_for @entry do |form| %>
 
-  <%# hidden field exists by default %>
-
-
-  <%= form.input :date %>
-  <%= form.input :body %>
-  <%= form.input :datapoint %>
-
-  <%= form.submit%>
-
-<% end %>
-
+<div class="container">
+  <%= simple_form_for @entry do |form| %>
+    <%# hidden field exists by default %>
+    <%= form.input :date %>
+    <%= form.input :body %>
+    <%= form.input :datapoint %>
+    <%= form.submit%>
+  <% end %>
+</div>
 
 
 <%# <form action="/" method="get">

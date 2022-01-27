@@ -3,5 +3,5 @@
 
 <ul>
   <% @entries.each do |entry| %>
-  <li><div class="button"><%= entry.date %></div></li>
+  <li><div class="button"><%= entry.strftime("%B %-d, %Y %-k:%M") %></div></li>
 </ul>
