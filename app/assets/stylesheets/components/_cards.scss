@@ -1,8 +1,9 @@
 
 .entry_card {
-  border-radius: 8px;
+  border-radius: 4px;
   background-color: #FFC900;
   padding: 8px;
+  border: 3px solid #444444;
   margin-top: 16px;
   font-weight: bold;
   text-decoration: none;
@@ -12,4 +13,17 @@
 
 .button:hover {
   color: white;
+}
+
+#sample {
+  border-radius: 4px;
+  background-color: #F4DFBA;
+  padding: 8px;
+  border: 3px solid #444444;
+  margin-top: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #444444;
+  width: 400px;
+  height: 400px;
 }

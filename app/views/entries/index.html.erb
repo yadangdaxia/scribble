@@ -6,10 +6,20 @@
 </div>
 
 <div class="container">
-  <% @entries.each do |entry| %>
-    <div class="entry_card">
-      <h3><%= entry.date.strftime("%B %-d, %Y %-k:%M") %></h3>
-      <%= link_to "View Entry", entry_path(entry.id) %>
+  <div class="row">
+
+    <div class="col-sm">
+      <% @entries.each do |entry| %>
+        <div class="entry_card">
+          <h3><%= entry.date.strftime("%B %-d, %Y, %-k:%M") %></h3>
+          <%= link_to "View Entry", entry_path(entry.id) %>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+
+    <div class="col-sm" id="sample">
+      <h2><%= Entry.find(34) %></h2>
+    </div>
+
+  </div>
 </div>
