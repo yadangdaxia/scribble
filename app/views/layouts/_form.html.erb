@@ -1,15 +1,11 @@
-<%= form_for @entry do |form| %>
+<%= simple_form_for @entry do |form| %>
 
   <%# hidden field exists by default %>
 
-  <%= form.label :date %>
-  <%= form.date_field :date %>
 
-  <%= form.label :body %>
-  <%= form.text_field :body %>
-
-  <%= form.label :datapoint %>
-  <%= form.number_field :datapoint %>
+  <%= form.input :date %>
+  <%= form.input :body %>
+  <%= form.input :datapoint %>
 
   <%= form.submit%>
 

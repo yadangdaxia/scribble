@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :entries
   # end
 
-  # root to: 'entries#home'
+  root to: 'entries#index'
 
   # # verb      to: 'controller#action'
   # # Show all entries
