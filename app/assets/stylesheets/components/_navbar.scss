@@ -8,6 +8,7 @@
   flex-wrap: wrap;
   border-bottom: 3px solid #444444;
   // text-decoration: none !important;
+  z-index:1
 }
 
 .navigation_bar ul {
@@ -38,9 +39,12 @@
   text-decoration: none !important;
 }
 
-.active {
-  color: #666666;
+/* Wasn't able to make this work - the code below is closest I got */
+.link:active {
+  color: red !important;
+  // text-decoration: none !important;
 }
+
 
 
 // .link:hover {

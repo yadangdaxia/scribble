@@ -1,0 +1,15 @@
+.form-and-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.buttons-container {
+  flex-basis: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  flex-basis: 75%;
+}

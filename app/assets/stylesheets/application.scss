@@ -22,6 +22,7 @@
 @import "bootstrap/scss/bootstrap";
 @import 'components/navbar';
 @import 'components/cards';
+@import 'components/containers';
 
 
 
@@ -32,6 +33,7 @@
 
 $background-color: #1A5F7A;
 $header-color: #FFC900;
+$padder: 8px;
 
 html {
   scroll-behavior: smooth;
