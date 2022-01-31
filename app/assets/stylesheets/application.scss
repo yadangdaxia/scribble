@@ -19,6 +19,7 @@
 
  /* Importing */
 
+
 @import "bootstrap/scss/bootstrap";
 @import 'components/navbar';
 @import 'components/cards';
@@ -51,4 +52,11 @@ ul {
 
 .top-spacer {
   height: 80px;
+}
+
+
+.form-control {
+  background-color: #F4DFBA;
+  // height: 300px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }

@@ -3,12 +3,11 @@
   <%= simple_form_for @entry do |form| %>
     <%# hidden field exists by default %>
     <%= form.input :date %>
-    <%= form.input :body %>
+    <div class="body-container">
+      <%= form.input :body %>
+    </div>
     <%= form.input :datapoint %>
     <%= form.submit "Submit", :class => 'main' %>
-
-<%# <%= link_to '<button type="button">New Post</button>'.html_safe, new_post_path %>
-
 
   <% end %>
 </div>

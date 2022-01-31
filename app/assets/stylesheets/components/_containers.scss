@@ -8,9 +8,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: right;
 }
 
 .form-container {
   flex-basis: 75%;
+}
+
+.body-container {
+  font-weight: bold;
 }
