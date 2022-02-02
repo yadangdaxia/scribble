@@ -10,3 +10,14 @@ import 'bootstrap'
 
 Rails.start()
 Turbolinks.start()
+
+
+
+
+
+// const allEntriesButton = document.querySelector('.link')
+
+// allEntriesButton.addEventListener('click', (e) => {
+//   console.log(e, "hello clicker")
+// }
+// )
