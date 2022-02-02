@@ -6,10 +6,10 @@ ruby '2.7.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.4'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+# gem 'sqlite3', '~> 1.4'
 
 # Use postgresql as the database for Active Record
-# gem 'pg', '~> 1.1'
+gem 'pg', '~> 1.1'
 
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
@@ -31,6 +31,9 @@ gem 'faker'
 
 # Simple form
 gem 'simple_form'
+
+# Search tool
+gem 'pg_search'
 
 # Parse CSS and add vendor prefixes to CSS rules using values from the Can I Use website. (https://caniuse.com/)
 gem 'autoprefixer-rails', '10.2.5'

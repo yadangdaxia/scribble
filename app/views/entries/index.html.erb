@@ -1,34 +1,34 @@
-
 <div class="container">
   <h1>Index page </h1>
   <h2>Here are all the entries</h2>
+
+  <%= form_tag entries_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find an entry"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+
+
+
+
   <p>Add search form</p>
 
   <button id="greet-user-button">Hello!</button>
-
 
   <button id="big-button">CLICK ME</button>
 
   <!--- Does this tag need to go at the bottom of the page? --->
   <%= javascript_pack_tag 'greeter'%>
 
-</div>
+      <div id="entries">
+        <% @entries.each do |entry| %>
 
-<div class="container">
-  <div class="row">
+          <p><%= entry.body %></p>
+        <% end %>
+      </div>
 
-    <div class="col-sm">
-      <% @entries.each do |entry| %>
-        <div class="entry_card">
-          <h3><%= entry.date.strftime("%B %-d, %Y, %-k:%M") %></h3>
-          <%= link_to "View Entry", entry_path(entry.id) %>
-        </div>
-      <% end %>
-    </div>
 
-    <div class="col-sm" id="sample">
-      <h2><%= Entry.find(34).body %></h2>
-    </div>
-
-  </div>
 </div>

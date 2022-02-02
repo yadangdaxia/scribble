@@ -15,7 +15,16 @@ class EntriesController < ApplicationController
   end
   # After creating the routes (check rails routes), let's code the controller.
   def index
-    @entries = Entry.all
+    # @entries = Entry.all
+    if params[:query].present?
+      @entries = Entry.search_by_text(params[:query])
+    else
+      @entries = Entry.all
+    end
+  end
+
+  def search
+    @entries = Entry.search_by_text(params[:query])
   end
 
   def show
@@ -48,6 +57,8 @@ class EntriesController < ApplicationController
     # Redirects to entries page
     redirect_to entries_path
   end
+
+
 
   private
 
