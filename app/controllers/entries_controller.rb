@@ -13,6 +13,7 @@ class EntriesController < ApplicationController
       @members = @members.select { |name| name == search }
     end
   end
+
   # After creating the routes (check rails routes), let's code the controller.
   def index
     # @entries = Entry.all
@@ -57,7 +58,6 @@ class EntriesController < ApplicationController
     # Redirects to entries page
     redirect_to entries_path
   end
-
 
 
   private
