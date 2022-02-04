@@ -2,9 +2,9 @@
   <h1>Entries</h1>
 
   <button id="greet-user-button">Hello!</button>
-  <button id="big-button">CLICK ME</button>
+  <button id="big-button" style="height: 50px">Big Button</button>
   <!--- Does this tag need to go at the bottom of the page? --->
-  <%= javascript_pack_tag 'greeter'%>
+  <%= javascript_pack_tag 'greeter', 'clicker' %>
 
   <h2>Search for the entry</h2>
   <p>Separate words with a space.</p>
@@ -20,27 +20,19 @@
     </div>
   <% end %>
 
-
-<div class="list-and-view">
-  <div class="entries-list">
-      <% @entries.each do |entry| %>
-      <div class="entry_card">
-        <h3><%= entry.date.strftime("%B %-d, %Y, %-k:%M") %></h3>
-        <p><%= entry.body %></p>
-        <p><%= link_to "View entry", entry_path(entry.id), class:"card-link" %></p>
-      </div>
-    <% end %>
+  <div class="list-and-view">
+    <div class="entries-list">
+        <% @entries.each do |entry| %>
+        <div class="entry-card" id="view-entry">
+          <h3><%= entry.date.strftime("%B %-d, %Y, %-k:%M") %></h3>
+          <p><%= entry.body %></p>
+          <p><%= link_to "View entry", entry_path(entry.id), class:"card-link" %></p>
+        </div>
+      <% end %>
+    </div>
+    <div class="entries-view">
+      <p> View here </p>
+    </div>
   </div>
-  <div class="entries-view">
-    <p> View here </p>
-  </div>
-</div>
-
-
-
-
-
-
-
 
 </div>
