@@ -1,15 +1,17 @@
 document.addEventListener('turbolinks:load', () => {
-  // const viewCard = document.querySelector('.entry-card')
 
+  // How to grab all cards generated?
   const viewCard = document.querySelectorAll('.entry-card')
-
   console.log(viewCard)
-  viewCard.addEventListener('click', (event) => {
-    // call function
-    console.log(event, 'logging the click event');
-    display('view card')
-  });
+
+  viewCard.forEach(viewCard => viewCard.addEventListener('click', (e) => {
+    console.log(e, 'logging the event');
+    display('view card');
+  }));
 });
+
+
+
 
 
 // function display(date) {

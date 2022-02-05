@@ -23,7 +23,7 @@
   <div class="list-and-view">
     <div class="entries-list">
         <% @entries.each do |entry| %>
-        <div class="entry-card" id="view-entry">
+        <div class="entry-card" id="clickable-card">
           <h3><%= entry.date.strftime("%B %-d, %Y, %-k:%M") %></h3>
           <p><%= entry.body %></p>
           <p><%= link_to "View entry", entry_path(entry.id), class:"card-link" %></p>
