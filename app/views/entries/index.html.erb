@@ -4,7 +4,7 @@
   <button id="greet-user-button">Hello!</button>
   <button id="big-button" style="height: 50px">Big Button</button>
   <!--- Does this tag need to go at the bottom of the page? --->
-  <%= javascript_pack_tag 'greeter', 'clicker' %>
+
 
   <h2>Search for the entry</h2>
   <p>Separate words with a space.</p>
@@ -27,12 +27,17 @@
           <h3><%= entry.date.strftime("%B %-d, %Y, %-k:%M") %></h3>
           <p><%= entry.body %></p>
           <p><%= link_to "View entry", entry_path(entry.id), class:"card-link" %></p>
+          <button onclick="showHideEntry()">Click to view entry</button>
         </div>
-      <% end %>
+
     </div>
     <div class="entries-view">
-      <p> View here </p>
+      <div id="body-card">
+        <p> <%= entry.body %> </p>
+      </div>
     </div>
+ <% end %>
   </div>
 
 </div>
+  <%= javascript_pack_tag 'greeter', 'clicker' %>
