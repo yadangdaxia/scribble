@@ -7,12 +7,14 @@ document.addEventListener('turbolinks:load', () => {
   viewCards.forEach(viewCard => viewCard.addEventListener('click', (e) => {
     console.log(e, 'Event logged. You clicked a view card :) ');
     console.log(e.currentTarget, 'Current target is here')
+    console.log(e.currentTarget, 'DIV is here')
 
-  const entryBody = e.currentTarget.textContent
-    console.log(entryBody, "Text content here")
+
+    const entryBody = e.currentTarget.textContent
+      console.log(entryBody, "Text content here")
 
   // Identify location for text to be filled in
-  document.getElementById('body-fill').innerHTML = entryBody
+  document.getElementById('body-fill').innerText = entryBody
 
   // Switch text
   if (entryBody.style.display == "none") {
@@ -23,6 +25,8 @@ document.addEventListener('turbolinks:load', () => {
   }
 
   }));
+
+
 });
 
 

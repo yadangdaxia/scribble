@@ -39,20 +39,24 @@
   color: white;
 }
 
-#sample {
-  border-radius: 4px;
-  background-color: #F4DFBA;
-  padding: 8px;
-  border: 3px solid #444444;
-  margin-top: 16px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #444444;
-  width: 400px;
-  height: 400px;
-}
+// #sample {
+//   border-radius: 4px;
+//   background-color: #F4DFBA;
+//   padding: 8px;
+//   border: 3px solid #444444;
+//   margin-top: 16px;
+//   font-weight: bold;
+//   text-decoration: none;
+//   color: #444444;
+//   width: 400px;
+//   height: 400px;
+// }
 
 #body-card {
+  // Note: sticky and top threshold go together
+  position: sticky;
+  top: 100px;
+
   border-radius: 4px;
   background-color: #F4DFBA;
   padding: 8px;
@@ -61,7 +65,6 @@
   text-decoration: none;
   color: #444444;
   width: 600px;
-  height: 600px;
+  min-height: 300px;
   box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.4) ;
-
 }
