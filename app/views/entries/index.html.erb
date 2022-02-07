@@ -25,18 +25,19 @@
         <% @entries.each do |entry| %>
         <div class="entry-card" id="clickable-card">
           <h3><%= entry.date.strftime("%B %-d, %Y, %-k:%M") %></h3>
-          <p><%= entry.body %></p>
+          <p id="body-content"><%= entry.body %></p>
           <p><%= link_to "View entry", entry_path(entry.id), class:"card-link" %></p>
-          <button onclick="showHideEntry()">Click to view entry</button>
+          <%# <button onclick="showHideEntry()">Click to view entry</button> %>
         </div>
-
+        <% end %>
     </div>
     <div class="entries-view">
       <div id="body-card">
-        <p> <%= entry.body %> </p>
+        <p>ENTRY CONTENT:</p>
+        <p id="body-fill"> placeholder </p>
       </div>
     </div>
- <% end %>
+
   </div>
 
 </div>
