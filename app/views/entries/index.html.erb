@@ -1,13 +1,10 @@
 <div class="container">
-  <h1>Entries</h1>
 
-  <button id="greet-user-button">Hello!</button>
-  <button id="big-button" style="height: 50px">Big Button</button>
+  <%# <button id="greet-user-button">Hello!</button> %>
   <!--- Does this tag need to go at the bottom of the page? --->
 
 
-  <h2>Search for the entry</h2>
-  <p>Separate words with a space.</p>
+  <h2>Search for an entry</h2>
 
   <%= form_tag entries_path, method: :get do %>
     <%= text_field_tag :query,
@@ -15,7 +12,7 @@
       class: "form-control",
       placeholder: "Find an entry"
     %>
-    <div class="button-holder">
+    <div class="button-holder-top-bottom">
       <%= submit_tag "Search", class: "main" %>
     </div>
   <% end %>
@@ -25,9 +22,13 @@
         <% @entries.each do |entry| %>
         <div class="entry-card" id="clickable-card">
           <h3><%= entry.date.strftime("%B %-d, %Y, %-k:%M") %></h3>
-          <p id="body-content"><%= entry.body %></p>
-          <p><%= link_to "View entry", entry_path(entry.id), class:"card-link" %></p>
+          <div class="entry-card-body">
+            <p id="body-content"><%= entry.body %></p>
+          </div>
+          <div class="view-button">
+            <p><%= link_to "View entry", entry_path(entry.id), class:"card-link" %></p>
           <%# <button onclick="showHideEntry()">Click to view entry</button> %>
+          </div>
         </div>
         <% end %>
     </div>

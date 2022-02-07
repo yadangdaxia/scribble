@@ -1,11 +1,23 @@
-<h1> Entry </h1>
 
-<h2>DATE: <%= @entry.date %><h2>
-<p>ENTRY BODY: <%= @entry.body %></p>
-<p>DATAPOINT: <%= @entry.datapoint %></p>
+<div class="container">
+  <h1> Entry for <%= @entry.date.strftime("%B %-d, %Y, %-k:%M") %></h1>
+  <div class="form-and-buttons">
+    <div class="buttons-container">
+      <div class="button-holder-all">
+        <button type="button" class="main"><%= link_to "Edit", edit_entry_path(@entry), class:"button-link" %></button>
+      </div>
+      <div class="button-holder-all">
+        <button type="button" class="main"><%= link_to "Delete", entry_path(@entry), class:"button-link", method: :delete, data: { confirm: "Are you sure?"} %>
+</button>
+      </div>
+    </div>
+    <div class="form-container">
+      <%= render "layouts/form" %>
+    </div>
+  </div>
+</div>
+
 
 <%# Here we need to pass parameters for the entry that will be edited/deleted %>
 <%#  https://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html  %>
 <%#  link_to (title, path)  %>
-<%= link_to "Edit", edit_entry_path(@entry) %>
-<%= link_to "Delete", entry_path(@entry),  method: :delete, data: { confirm: "Are you sure?"} %>

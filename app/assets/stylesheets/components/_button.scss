@@ -7,10 +7,29 @@
   border: 2px solid #FFFFFF;
   text-decoration: none;
   padding: 4px 38px 4px 38px;
-
   width: 200px;
 }
 
-.button-holder {
+.main:hover {
+  background-color: #555555;
+}
+
+.button-link {
+  color: #FFFFFF;
+  text-decoration: none !important;
+}
+
+.button-link:hover {
+  color: #FFFFFF;
+  text-decoration: none !important;
+}
+
+
+.button-holder-all {
   margin: 24px;
+}
+
+.button-holder-top-bottom {
+  margin-top: 12px;
+  margin-bottom: 12px;
 }

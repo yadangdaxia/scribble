@@ -10,19 +10,42 @@ document.addEventListener('turbolinks:load', () => {
     // e.preventDefault();
     // showHideEntry()
     // revealText();
-    insertText()
+
+    // I don't necessarily need the e.currentTarget - it can just be left blank
+    insertText(e)
   }));
 });
 
+
+
 function insertText() {
+  // Get the entry body content from the preview card
   const body = document.getElementById('body-content').textContent;
     console.log(body, ' <- this should be the text content, yo.');
-  // body.insertAdjacentElement("beforeend", bodyText);
+  // Fill in the text
   document.getElementById('body-fill').innerHTML = body
+  if (body.style.display == "none") {
+    body.style.display = "block";
+  }
+  else {
+    body.style.display == "none";
+  }
 }
 
 
 
+
+
+
+function revealText() {
+  const body = document.getElementById('body-card').textContent = "<%= entry.body %>"
+  if (body.style.display == "none") {
+    body.style.display = "block";
+  }
+  else {
+    body.style.display == "none";
+  }
+}
 
 
 
@@ -32,22 +55,9 @@ function insertTextOld() {
   console.log(body, 'Clicking the view card gives you this body card.');
   body.insertAdjacentHTML("beforeend", "<p><%= entry.body %></p>");
   // body.insertAdjacentElement("beforeend", bodyText);
-
 }
 
-// const table = document.querySelector("tbody");
-// let newRow = table.insertAdjacentHTML("beforeend", "<tr><td>15</td><td>New Team </td><td>0</td></tr>"); // Was expecting to see row inserted (?)
 
-
-function revealText() {
-  const body = document.getElementById('body-card').textContent="<%= entry.body %>"
-  if (body.style.display == "none") {
-    body.style.display = "block";
-  }
-  else {
-    body.style.display == "none";
-  }
-}
 
 
 function showHideEntry() {
