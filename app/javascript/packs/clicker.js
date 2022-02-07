@@ -1,28 +1,41 @@
 
 document.addEventListener('turbolinks:load', () => {
-  // How to grab all cards generated?
-  const viewCard = document.querySelectorAll('.entry-card')
-  // console.log(viewCard, "This is the view card")
-  const bodyText = document.querySelector
-  // Calling event listener on each card
-  viewCard.forEach(viewCard => viewCard.addEventListener('click', (e) => {
-    // console.log(e, 'Event logged. You clicked a view card :) ');
-    // e.preventDefault();
-    // showHideEntry()
-    // revealText();
+  // Grab all the cards generated
+  const viewCards = document.querySelectorAll('.entry-card')
 
-    // I don't necessarily need the e.currentTarget - it can just be left blank
-    insertText(e)
+  // Call event listener on each card
+  viewCards.forEach(viewCard => viewCard.addEventListener('click', (e) => {
+    console.log(e, 'Event logged. You clicked a view card :) ');
+    console.log(e.currentTarget, 'Current target is here')
+
+  const entryBody = e.currentTarget.textContent
+    console.log(entryBody, "Text content here")
+
+  // Identify location for text to be filled in
+  document.getElementById('body-fill').innerHTML = entryBody
+
+  // Switch text
+  if (entryBody.style.display == "none") {
+    entryBody.style.display = "block";
+  }
+  else {
+    entryBody.style.display == "none";
+  }
+
   }));
 });
 
 
 
+
+
+
 function insertText() {
   // Get the entry body content from the preview card
-  const body = document.getElementById('body-content').textContent;
+  const body = document.querySelector('.entry-card-body').textContent;
     console.log(body, ' <- this should be the text content, yo.');
   // Fill in the text
+
   document.getElementById('body-fill').innerHTML = body
   if (body.style.display == "none") {
     body.style.display = "block";
@@ -30,7 +43,7 @@ function insertText() {
   else {
     body.style.display == "none";
   }
-}
+ }
 
 
 
