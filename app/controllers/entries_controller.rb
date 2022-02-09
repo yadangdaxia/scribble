@@ -24,6 +24,10 @@ class EntriesController < ApplicationController
     end
   end
 
+  def data
+    @entries = Entry.all
+  end
+
   def search
     @entries = Entry.search_by_text(params[:query])
   end
