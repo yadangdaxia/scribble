@@ -1,3 +1,4 @@
+// chart.js
 
 document.addEventListener('turbolinks:load', () => {
   const ctx = document.getElementById('chart').getContext('2d');

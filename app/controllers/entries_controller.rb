@@ -29,8 +29,6 @@ class EntriesController < ApplicationController
     # @entries = Entry.where("datapoint > ?", 10)
 
     @entries = Entry.all
-    # puts @entries.keys
-    # puts "KEYS ABOVE"
 
     @data_keys = [
       'January',
@@ -38,6 +36,7 @@ class EntriesController < ApplicationController
       'March',
       'April'
     ]
+
     @data_values = [40, 15, 20, 45]
 
     # @data = Entry.all
@@ -46,8 +45,6 @@ class EntriesController < ApplicationController
     # puts 'Here are the datapoints'
     # puts @datapoints
     # end
-
-
 
   end
 
