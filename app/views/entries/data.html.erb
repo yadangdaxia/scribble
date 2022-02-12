@@ -1,13 +1,14 @@
 <div class="container">
-  <h1>This is the data page</h1>
-    <ul>
-      <% @entries.each do |entry| %>
-        <li><div class="date-data"><p><%= entry.date %></p></div></li>
-      <% end %>
-    </ul>
 
-  <h1>Here is the graph</h1>
-  <canvas id="chart"></canvas>
+  <h1>Here is the graph.</h1>
+  <div class="canvas-container">
+
+
+    <canvas id="chart" data-labels="<%= @data_keys %>" data-data="<%= @data_values %>" ></canvas>
+
+
+
+  </div>
 </div>
 
 <%= javascript_pack_tag 'data' %>

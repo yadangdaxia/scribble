@@ -25,7 +25,30 @@ class EntriesController < ApplicationController
   end
 
   def data
+
+    # @entries = Entry.where("datapoint > ?", 10)
+
     @entries = Entry.all
+    # puts @entries.keys
+    # puts "KEYS ABOVE"
+
+    @data_keys = [
+      'January',
+      'February',
+      'March',
+      'April'
+    ]
+    @data_values = [40, 15, 20, 45]
+
+    # @data = Entry.all
+    # @datapoints = []
+    # @datapoints.each do |datapoint|
+    # puts 'Here are the datapoints'
+    # puts @datapoints
+    # end
+
+
+
   end
 
   def search
@@ -33,6 +56,7 @@ class EntriesController < ApplicationController
   end
 
   def show
+
   end
 
   def new

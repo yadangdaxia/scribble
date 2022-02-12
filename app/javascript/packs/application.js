@@ -14,7 +14,6 @@ Turbolinks.start()
 
 
 
-
 // const allEntriesButton = document.querySelector('.link')
 
 // allEntriesButton.addEventListener('click', (e) => {
