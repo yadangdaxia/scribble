@@ -26,6 +26,11 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+
+# Groupdate: I may use this for chart.js  https://github.com/ankane/groupdate
+gem "groupdate"
+
+
 # Faker
 gem 'faker'
 

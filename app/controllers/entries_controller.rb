@@ -14,7 +14,6 @@ class EntriesController < ApplicationController
     end
   end
 
-  # After creating the routes (check rails routes), let's code the controller.
   def index
     # @entries = Entry.all
     if params[:query].present?
@@ -25,19 +24,81 @@ class EntriesController < ApplicationController
   end
 
   def data
+    # Hardcoded format:
+    # @data_keys = ["A", "B", "C" ]
+    # @data_values = [8, 2.3, 7]
 
-    # @entries = Entry.where("datapoint > ?", 10)
+    @data_keys = []
+    @plucked_data_keys = Entry.pluck(:date)
+    # need to convert items in this array to string/integer?
 
-    @entries = Entry.all
+    # @plucked_data_keys.map { |item| item.to_s}
+    @plucked_data_keys.each do |date|
+      date.to_s
+      print "---DATE---"
+      print date
+      @data_keys.push(date.to_s)
+    end
 
-    @data_keys = [
-      'January',
-      'February',
-      'March',
-      'April'
-    ]
 
-    @data_values = [40, 15, 20, 45]
+    @data_values = Entry.pluck(:datapoint)
+
+    # @mood = Entry.group_by_day(:created_at).count
+    # @data_keys = @mood.keys
+
+    # for i in @data_keys
+    #   i.to_s
+    #   # puts i
+    # end
+
+    print "---DATA KEYS---"
+    print @data_keys
+    print "---DATA VALUES---"
+    print @data_values
+
+    # Tweak this to change which datapoints are shown
+    # @entries = Entry.where("datapoint > ?", 2)
+    # @entries = Entry.all
+    # How to avoid hardcoding this?
+
+
+    # @data = Entry.where("datapoint")
+    # @date = Entry.where("date")
+    # print "----- DATA -----"
+    # puts @data.first
+    # print "----- DATE -----"
+    # puts @date.first
+
+
+    # @data_keys = Entry.all.select('date')
+
+
+    # print "------ DATA VALUES HERE ------"
+    # print @data_values
+
+
+    # @data_values = Entry.all.select('datapoint')
+    # puts "------HARD DATA VALUES------"
+    # puts @data_values
+
+
+
+        # @moods = Entry.all
+
+    # print "-----MOOD-----"
+    # print @moods
+
+
+    # print "------DATA KEYS:------"
+    # print @data_keys
+
+    # @data_values = @mood.values
+    # print "-----DATA VALUES:-----"
+    # print @data_values
+
+
+    # iterate over this to put into array?
+
 
     # @data = Entry.all
     # @datapoints = []
@@ -48,12 +109,14 @@ class EntriesController < ApplicationController
 
   end
 
+
+
+
   def search
     @entries = Entry.search_by_text(params[:query])
   end
 
   def show
-
   end
 
   def new

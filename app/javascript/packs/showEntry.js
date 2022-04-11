@@ -5,12 +5,12 @@ document.addEventListener('turbolinks:load', () => {
 
   // Call event listener on each card
   viewCards.forEach(viewCard => viewCard.addEventListener('click', (e) => {
-    console.log(e, 'Event logged. You clicked a view card :) ');
+    console.log(e, 'Event logged. You clicked a view card.');
     console.log(e.currentTarget, 'Current target is here')
     // console.log(e.currentTarget[1], 'DIV is here?')
 
     // const body = document.parentNode.querySelectorAll('.entry-card-body')
-    // console.log(body, "HELLLOOO body");
+    // console.log(body, "HELLO body");
 
     const entryBody = e.currentTarget.textContent
     console.log(entryBody, "entryBody Text content here")
@@ -18,13 +18,13 @@ document.addEventListener('turbolinks:load', () => {
     // Identify location for text to be filled in
     document.getElementById('body-fill').innerText = entryBody
 
-  // Switch text
-  if (entryBody.style.display == "none") {
-    entryBody.style.display = "block";
-  }
-  else {
-    entryBody.style.display == "none";
-  }
+    // Switch text
+    if (entryBody.style.display == "none") {
+      entryBody.style.display = "block";
+    }
+    else {
+      entryBody.style.display == "none";
+    }
 
   }));
 
